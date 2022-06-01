@@ -1,8 +1,8 @@
-GET http://localhost:3001/api/persons
+POST http://localhost:3001/api/persons
 Content-Type: application/json
 
 {
-    "name": "Arto Mellas",
+    "name": "Ada Lovelace",
     "nro": "040-654321",
     "id": ""
 }
