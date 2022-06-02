@@ -1,10 +1,9 @@
 
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState }  from 'react';
 import List from './components/List'
 import Form from './components/Form'
 import noteService from './services/Notes.js'
 import Notification from './components/Notification'
-import index from './index.css'
 
 
 const App = () => {
