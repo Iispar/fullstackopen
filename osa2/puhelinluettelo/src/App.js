@@ -2,7 +2,7 @@
 import React, { useEffect, useState }  from 'react';
 import List from './components/List'
 import Form from './components/Form'
-import noteService from './services/Notes.js'
+import noteService from './services/Notes.js.js'
 import Notification from './components/Notification'
 
 
@@ -21,9 +21,10 @@ const App = () => {
     noteService
     .getAll()
     .then(response => {
+      console.log("Recieved")
       setPersons(response.data)
     })
-  }, [])
+  },[])
 
 
   const addName = (event) => {
@@ -70,14 +71,23 @@ const App = () => {
         .then(response => {
         setPersons(persons.concat(response))
         console.log(response)
+
+
+        setErrorMessage(
+          `${person.name} was added to phonebook`
+        )
+        setTimeout(() => {
+          setErrorMessage(null)
+        }, 5000)
       })
 
-      setErrorMessage(
-        `${person.name} was added to phonebook`
-      )
+      .catch(error => {setErrorMessage((JSON.stringify(error.response.data)))})
       setTimeout(() => {
         setErrorMessage(null)
       }, 5000)
+
+
+
 
       setNewName('')
       setNewNro('')
