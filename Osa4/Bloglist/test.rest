@@ -1,9 +1,22 @@
-POST http://localhost:3003/api/bog
+post http://localhost:3003/api/blogs/
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJpZCI6IjYyY2QzNzEwZWQ3NWNkNzQyOTJkNjI2ZSIsImlhdCI6MTY1NzYxNzQwM30.26Ccvebx6Aj1qrYnOT5JKt45NXXFIDzLpVa3Qyom4Ns
+
+# {
+#      "username": "user",
+#      "password": "salasana"
+# }
 
 {
-    "title": "Title3",
-    "author": "Author",
-    "url": "http://www.example.com",
-    "likes": 6
+    "title": "testi2",
+    "author": "testiAutho",
+    "url": "https://www.testi.com",
+    "likes": "4",
+    "userId": "62cd3710ed75cd74292d626e"
 }
+
+# {
+#      "username": "user",
+#      "name": "Mania",
+#      "password": "salasana"
+# }

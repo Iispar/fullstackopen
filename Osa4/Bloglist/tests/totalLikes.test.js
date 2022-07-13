@@ -61,4 +61,5 @@ describe('total likes', () => {
     const result = listHelper.favoriteBlog(blogs)
     expect(result).toBe('Canonical string reduction')
   })
+
 })
