@@ -1,19 +1,22 @@
-post http://localhost:3003/api/blogs/
+post http://localhost:3003/api/users
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJpZCI6IjYyY2QzNzEwZWQ3NWNkNzQyOTJkNjI2ZSIsImlhdCI6MTY1NzYxNzQwM30.26Ccvebx6Aj1qrYnOT5JKt45NXXFIDzLpVa3Qyom4Ns
 
-# {
-#      "username": "user",
-#      "password": "salasana"
-# }
+ {
+      "username": "user2",
+      "password": "salasana"
+ }
 
-{
-    "title": "testi2",
-    "author": "testiAutho",
-    "url": "https://www.testi.com",
-    "likes": "4",
-    "userId": "62cd3710ed75cd74292d626e"
-}
+#Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJpZCI6IjYyY2QzNzEwZWQ3NWNkNzQyOTJkNjI2ZSIsImlhdCI6MTY1NzYxNzQwM30.26Ccvebx6Aj1qrYnOT5JKt45NXXFIDzLpVa3Qyom4Ns
+#{
+#    "title": "testi2",
+ #   "author": "testiAutho",
+ #   "url": "https://www.testi.com",
+ #   "likes": "4",
+ #   "userId": "62cd3710ed75cd74292d626e"
+#}
+
+
+
 
 # {
 #      "username": "user",
