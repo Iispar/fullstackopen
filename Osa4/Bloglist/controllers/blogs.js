@@ -59,7 +59,7 @@ blogsRouter.delete('/:id', async (request, response) => {
   response.status(204).end()
 })
 
-blogsRouter.put(':id', async (request, response) => {
+blogsRouter.put('/:id', async (request, response) => {
   console.log('meni läpi')
   const { body } = request
   const { id } = request.params
