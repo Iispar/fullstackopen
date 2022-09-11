@@ -6,6 +6,7 @@ const Blog = (props) => {
   const user = props.user
 
   const [visible, setVisible] = useState(false)
+  const [blogObject, setBlogObject] = useState(blog)
   const showWhenVisible = { display: visible ? '' : 'none' }
   const buttonLabel = visible ? 'hide' : 'view'
 
@@ -19,6 +20,7 @@ const Blog = (props) => {
       likes: blog.likes + 1
     })
     props.updateBlog(updatedBlog)
+    setBlogObject(updatedBlog)
   }
 
   const deleteBlog = () => {
@@ -32,15 +34,12 @@ const Blog = (props) => {
         <button onClick={toggleVisibility}> {buttonLabel} </button>
         <div style = {showWhenVisible}>
           <p> {blog.url} </p>
-          <p> {blog.likes} <button type="button" onClick={increaseLikes}> like </button> </p>
+          <p> {blogObject.likes} <button type="button" onClick={increaseLikes}> like </button> </p>
+          <button onClick={deleteBlog}> delete </button>
         </div>
 
+        {(blog.user?.username === user.username)}
 
-        {(blog.user?.username === user.username) && (
-          <button onClick={deleteBlog}>
-          delete
-          </button>
-        )}
       </li>
     </div>
   )

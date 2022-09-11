@@ -48,6 +48,7 @@ const App = () => {
       setTimeout(() => {
         setSuccessMessage(null)}, 1000)
 
+      blogService.setToken(user.token)
       setUser(user)
       setUsername('')
       setPassword('')
@@ -82,10 +83,10 @@ const App = () => {
 
   const updateBlog = async(blogToUpdate) => {
     try {
-      const updatedBlog = await blogService.update(blogToUpdate)
+      await blogService.update(blogToUpdate)
 
       setSuccessMessage('Successfully updated blog')
-      setBlogs(blogs.map(blog => blog.id !== blogToUpdate.id ? blog : updatedBlog))
+      setBlogs(blogs.map((blog) => blog.id !== blogToUpdate.id ? blog : blogToUpdate))
       setTimeout(() => {
         setSuccessMessage(null)
       }, 5000)
@@ -99,7 +100,7 @@ const App = () => {
     try {
       if (window.confirm(`remove ${blogToDelete.id} by ${blogToDelete.author}`)){
         await blogService.deleteBlog(blogToDelete.id)
-        setBlogs(blogs.filter((blog) => blog.iud !== blogToDelete.id))
+        setBlogs(blogs.filter((blog) => blog.id !== blogToDelete.id))
       }
 
       setSuccessMessage('Successfully deleted blog')

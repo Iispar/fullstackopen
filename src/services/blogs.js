@@ -17,6 +17,7 @@ const getAll = () => {
 }
 
 const create = async newBlog => {
+  console.log(config)
   const response = await axios.post(baseUrl, newBlog, config)
   return response.data
 }

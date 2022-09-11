@@ -7,7 +7,8 @@ module.exports = {
   },
   'extends': [
     'eslint:recommended',
-    'plugin:react/recommended'
+    'plugin:react/recommended',
+    'plugin:cypress/recommended'
   ],
   'parserOptions': {
     'ecmaFeatures': {
@@ -52,7 +53,5 @@ module.exports = {
     'react': {
       'version': 'detect'
     }
-  },
-  'parser': '@babel/eslint-parser',
-  'requireConfigFile': false
+  }
 }
